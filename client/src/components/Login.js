@@ -20,10 +20,8 @@ const Login = () => {
     setError('')
     try {
       const response = await api.post('/api/auth', formData)
-
       // save token to localStorage
       localStorage.setItem('token', response.data.token)
-
       // redirect to dashboard or home
       navigate('/')
     } catch (err) {
